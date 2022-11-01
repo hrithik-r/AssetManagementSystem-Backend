@@ -8,6 +8,7 @@ public class AssetManagementSystemApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(AssetManagementSystemApplication.class, args);
+		System.out.println("Welcome to Asset Management System REST API");
 	}
 
 }
