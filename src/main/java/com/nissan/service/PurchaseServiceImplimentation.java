@@ -1,20 +1,24 @@
 package com.nissan.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.nissan.model.Purchase;
-import com.nissan.model.User;
 import com.nissan.repo.IPurchaseRepository;
 
+
+@Service
 public class PurchaseServiceImplimentation implements IPurchaseService{
 	
 	@Autowired
 	IPurchaseRepository purchaseRepo;
 
 	@Override
-	public Purchase getAllPurchases() {
+	public List<Purchase>  getAllPurchases() {
 		// TODO Auto-generated method stub
-		return (Purchase) purchaseRepo.findAll();
+		return purchaseRepo.findAll();
 	}
 
 	@Override
