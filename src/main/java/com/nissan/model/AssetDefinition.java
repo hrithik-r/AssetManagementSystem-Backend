@@ -8,8 +8,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.nissan.model.AssetType;
-
 @Entity
 @Table(name = "tblAssetDefinition")
 public class AssetDefinition {
@@ -20,6 +18,9 @@ public class AssetDefinition {
 	
 	private String assetDefinitionName;
 	private String assetDefinitionClass;
+	private int assetTypeId;
+	
+	private boolean isActive;
 	
 	// Relation with parent table
 	@JoinColumn(name="assetTypeId", insertable = false, updatable = false)
@@ -34,11 +35,13 @@ public class AssetDefinition {
 	
 	// Parameterized constructor
 	public AssetDefinition(int assetDefinitionId, String assetDefinitionName, String assetDefinitionClass,
-			AssetType assetType) {
+			int assetTypeId, boolean isActive, AssetType assetType) {
 		super();
 		this.assetDefinitionId = assetDefinitionId;
 		this.assetDefinitionName = assetDefinitionName;
 		this.assetDefinitionClass = assetDefinitionClass;
+		this.assetTypeId = assetTypeId;
+		this.isActive = isActive;
 		this.assetType = assetType;
 	}
 
@@ -65,6 +68,22 @@ public class AssetDefinition {
 
 	public void setAssetDefinitionClass(String assetDefinitionClass) {
 		this.assetDefinitionClass = assetDefinitionClass;
+	}
+
+	public int getAssetTypeId() {
+		return assetTypeId;
+	}
+
+	public void setAssetTypeId(int assetTypeId) {
+		this.assetTypeId = assetTypeId;
+	}
+
+	public boolean getIsActive() {
+		return isActive;
+	}
+
+	public void setIsActive(boolean isActive) {
+		this.isActive = isActive;
 	}
 
 	public AssetType getAssetType() {
