@@ -10,7 +10,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-
+//aM --> Assist Master
 
 @Entity
 @Table(name="asset_master_tbl")
