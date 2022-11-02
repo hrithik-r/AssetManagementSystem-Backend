@@ -8,6 +8,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.nissan.model.AssetType;
+
 @Entity
 @Table(name = "tblAssetDefinition")
 public class AssetDefinition {
